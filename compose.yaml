@@ -4,7 +4,7 @@
 # conversations) et le cache entre deux lancements.
 services:
   api:
-    image: ghcr.io/willisback/p7-assistant-evenements-culturels:${PULS_VERSION:-latest}
+    image: ghcr.io/willisback/oc-aie-p7-assistant-evenements-culturels:${PULS_VERSION:-latest}
     env_file: .env
     environment:
       LLM_PROFILE: ${LLM_PROFILE:-ci}

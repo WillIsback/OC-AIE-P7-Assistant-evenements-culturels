@@ -15,7 +15,7 @@ trouve les bons événements, dit quand il n'y en a pas, et s'intègre par une s
 ## Préparation (la veille)
 
 ```bash
-docker pull ghcr.io/willisback/p7-assistant-evenements-culturels:latest   # index embarqué
+docker pull ghcr.io/willisback/oc-aie-p7-assistant-evenements-culturels:latest   # index embarqué
 docker compose up -d                                                       # lit .env (LLM_PROFILE=ci)
 uv run python scripts/api_test.py                                          # 7/7 attendu
 ```

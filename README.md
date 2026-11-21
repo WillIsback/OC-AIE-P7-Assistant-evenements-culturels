@@ -32,8 +32,8 @@ de l'API [Open Agenda](https://openagenda.com).
 ### Installation avec uv (source de vérité : `pyproject.toml` + `uv.lock`)
 
 ```bash
-git clone https://github.com/WillIsback/P7-assistant-evenements-culturels.git
-cd P7-assistant-evenements-culturels
+git clone https://github.com/WillIsback/OC-AIE-P7-Assistant-evenements-culturels.git
+cd OC-AIE-P7-Assistant-evenements-culturels
 uv sync --locked          # crée .venv (non versionné) avec les versions exactes du lock
 ```
 
@@ -158,7 +158,7 @@ l'index resynchronisé, la base et le cache :
 ```bash
 docker compose up                   # compose.yaml, lit .env ; LLM_PROFILE=ci par défaut
 # ou
-docker run --rm -p 8000:8000 --env-file .env ghcr.io/willisback/p7-assistant-evenements-culturels:latest
+docker run --rm -p 8000:8000 --env-file .env ghcr.io/willisback/oc-aie-p7-assistant-evenements-culturels:latest
 uv run python scripts/api_test.py   # vérifie le conteneur
 ```
 
@@ -219,7 +219,7 @@ l'image publiée sur GHCR, la fenêtre de chat est le script Gradio télécharg�
   remplir (le fichier doit exister, sinon `--env-file` échoue) :
 
   ```bash
-  curl -fsSLo .env https://raw.githubusercontent.com/WillIsback/P7-assistant-evenements-culturels/main/.env.example
+  curl -fsSLo .env https://raw.githubusercontent.com/WillIsback/OC-AIE-P7-Assistant-evenements-culturels/main/.env.example
   ```
 
   Variables à renseigner pour l'image : `LLM_PROFILE=ci` (le profil `local` suppose un
@@ -232,11 +232,11 @@ l'image publiée sur GHCR, la fenêtre de chat est le script Gradio télécharg�
 **1. API (terminal 1)** — l'image embarque l'index régional ; port 8000 :
 
 ```bash
-docker run --rm -p 8000:8000 --env-file .env ghcr.io/willisback/p7-assistant-evenements-culturels:v0.3.0
+docker run --rm -p 8000:8000 --env-file .env ghcr.io/willisback/oc-aie-p7-assistant-evenements-culturels:v0.3.1
 ```
 
 Prête quand `curl http://127.0.0.1:8000/health` renvoie `"loaded": true` (quelques
-secondes). Le tag de l'image porte le préfixe `v` (`:v0.3.0`) ; `:latest` donne la dernière release ; la commande est identique sous
+secondes). Le tag de l'image porte le préfixe `v` (`:v0.3.1`, première version publiée sous ce nom) ; `:latest` donne la dernière release ; la commande est identique sous
 PowerShell.
 
 **2. Compte de démonstration (une seule fois)** — la base du conteneur est vierge et la
@@ -256,7 +256,7 @@ Invoke-RestMethod -Method Post http://127.0.0.1:8000/auth/register -ContentType 
 **3. Fenêtre de chat Gradio (terminal 2)** :
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/WillIsback/P7-assistant-evenements-culturels/main/scripts/chat_ui.py | uv run -
+curl -fsSL https://raw.githubusercontent.com/WillIsback/OC-AIE-P7-Assistant-evenements-culturels/main/scripts/chat_ui.py | uv run -
 ```
 
 Ouvrir <http://127.0.0.1:7860>. Le script vise `http://127.0.0.1:8000` ; pour une autre
