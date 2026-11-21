@@ -1,7 +1,7 @@
 # Rapport technique — Assistant intelligent de recommandation d'événements culturels
 
 POC Puls-Events · OpenClassrooms AI Engineer, projet 7 · William Derue · novembre 2026
-Version du code décrite : v0.3.0 (dépôt `WillIsback/P7-assistant-evenements-culturels`).
+Version du code décrite : v0.3.0 (dépôt `WillIsback/OC-AIE-P7-Assistant-evenements-culturels`).
 
 ## 1. Objectifs du projet
 
